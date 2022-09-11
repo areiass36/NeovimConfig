@@ -1,7 +1,3 @@
-"Setup Caps as escape
-" :autocmd BufWinEnter * !dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
-" :autocmd BufWinLeave * !dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:caps']"
-
 :set number
 :set relativenumber
 :set autoindent
@@ -11,22 +7,25 @@ call plug#begin()
 " Show current vim mode more neatly
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/preservim/nerdtree'
-Plug 'https://github.com/preservim/tagbar'
-Plug 'https://github.com/glepnir/dashboard-nvim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'OmniSharp/omnisharp-vim'
+" Plug 'OmniSharp/omnisharp-vim'
 " Setup fzf command in neovim
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-
+" AutoComplete
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Error Highlight
+" Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-x> :NERDTreeFocus<CR>
-nnoremap <F8> :TagbarToggle<CR>
 nnoremap <C-f> :Files<CR>
-
-let g:OmniSharp_server_use_net6 = 1
-let g:OmniSharp_server_stdio = 1
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+" let g:OmniSharp_server_use_net6 = 1
+" let g:OmniSharp_server_stdio = 1
+" let g:OmniSharp_highlight_types = 2	
+" if using ultisnips, set g:OmniSharp_want_snippet to 1
+" let g:OmniSharp_want_snippet = 1
 
 :colorscheme codedark

@@ -1,0 +1,27 @@
+{
+	"languageserver": {
+		"csharp-ls": {
+		  "command": "csharp-ls",
+		  "filetypes": ["cs"],
+		  "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+		}
+	},
+	"java.configuration.runtimes": [
+		{
+		    "name": "JavaSE-14",
+		    "path": "/home/mark/.asdf/installs/java/openjdk-14.0.1"
+		},
+		{
+		    "name": "JavaSE-17",
+		    "path": "/home/mark/.asdf/installs/java/openjdk-17.0.2"
+		},
+		{
+		    "name": "JavaSE-1.8",
+		    "path": "/home/mark/.asdf/installs/java/corretto-8.342.07.4"
+		}	
+	],
+	"java.home" : "/home/mark/.asdf/installs/java/openjdk-17.0.2",
+	"omnisharp.version": "v1.37.3",
+	"omnisharp.trace.server": "information",
+	"omnisharp.debug.server": true
+}
